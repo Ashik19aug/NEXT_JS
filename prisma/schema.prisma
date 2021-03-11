@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./next.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// we need to create model for our project in this file
+model Project {
+    id  Int @id @default(autoincrement())
+    name Text
+    language Text
+    technology Text
+    description Text
+}
